@@ -1,0 +1,4 @@
+1. Download Anaconda from https://www.continuum.io/downloads
+2. open it using application spyder installed on your computer
+3. once it open create a new application and import this project in it
+4.run the server file using the play button present on top.
