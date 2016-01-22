@@ -1,15 +1,13 @@
 """
 	Main Interfacing Program for all the Applications
 """
-
 from train import train
 import plotter
 from matplotlib import pyplot as plt
 
 class Gesture(object):
 
-	def __init__(self,project_id):
-		# path store the file name where the dataset to be stored
+	def __init__(self):
 		self.features = []
 		self.labels = []
 
@@ -53,4 +51,3 @@ class Gesture(object):
 				self.addDataFromFile(path,labels[i])
                         #print path
 
-		
