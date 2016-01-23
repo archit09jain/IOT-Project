@@ -13,11 +13,9 @@ m = PyMouse()
 k = PyKeyboard()
 
 def fun(inp):
-    if(inp==4):
+    if(inp==2):
         k.press_key(k.right_key)
     elif(inp==3):
-        k.press_key(k.down_key)
-    elif(inp==2):
         k.press_key(k.up_key)
     else:
         k.press_key(k.left_key)

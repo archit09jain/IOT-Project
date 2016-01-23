@@ -2,19 +2,17 @@ import socket
 from main import Gesture
 from data import DataManager
 
-# will be called only once
 app = Gesture()
 manager = DataManager()
-app.train(manager.folders,manager.names,manager.labels)	
+app.train(manager.folders,manager.labels)	
 clf = app.initClassifier()
 
-def startApp(PORT,appID,controller):        
+def startApp(PORT,appID,controller):   
         s = socket.socket()
         host = socket.gethostname() 
         port = PORT
         s.bind((host, port))
         s.listen(5)
-        
         while True:
            c, addr = s.accept()
            print '\nGot connection from', addr
@@ -30,7 +28,7 @@ def startApp(PORT,appID,controller):
            if(len(msg)>=500):
                test = app.getDataFromFile(filePath)
                result = app.predict(test)
-               print manager.folders[result-1]
+               print result
                app.plotImage(filePath)
                controller(result)
            else:
